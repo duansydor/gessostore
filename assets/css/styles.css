@@ -1,0 +1,561 @@
+/* cores usadas 
+primary
+	https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=01579B
+
+	secondary
+	https://material.io/tools/color/#!/?view.left=1&view.right=0&primary.color=01579B&secondary.color=D81B60
+*/
+
+/*==============================================================
+	FONTS
+===============================================================*/
+
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+
+
+
+body{
+	margin:0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	font-family: arial;
+	font-family: sans-serif;
+
+}
+
+/*==============================================================
+	HEADER AND MAIN CONTAINERS
+===============================================================*/
+a{
+	cursor: pointer;
+}
+.container{
+	margin-top: 60px;
+}
+.principal{
+	height:100%;
+	margin-bottom: 30px;
+}
+header{
+	height:100px;
+	position: fixed;
+	z-index: 1;
+	opacity: 0.9;
+	transition:0.5s;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: #002f6c; /*color dark*/
+	color: white;
+	display: flex;
+	align-items: center;
+	padding: 0px;
+	font-family: 'Sofia', cursive;
+	font-size: 1.2em;
+
+}
+header .logo{
+	font-size: 2em;
+	flex-grow: 1;
+}
+header .logo a{
+	text-decoration: none;
+	color: white;
+}
+header .navigation a{
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+	margin-right:60px;
+	flex-grow: 1;
+}
+header .navigation{
+	display: flex;
+	color: white;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.cart-counter{
+	color:white;
+	font-weight: bold;
+	font-size: .8em;
+	margin-left: -6px;
+}
+/*==============================================================
+	HOME BACKGROUND IMG
+===============================================================*/
+
+.background{
+	margin: 0px;
+	background-image: url("../img/outros/background.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 500px;
+	opacity: 0.9;
+
+	/*paraallax*/
+	background-attachment: fixed;
+
+}
+
+.background .title{
+	position: absolute;
+	 top:250px;
+	 color: white;
+	 left: 35%;
+	 text-align: center;
+	 width: 500px;
+	 border-radius: 10px;
+	 background-color: rgba(0, 0, 0, 0.8);
+}
+.background .title h1{
+	margin:30px;
+	font-family: 'Sofia', cursive;
+	font-size: 2.3em;
+}
+
+
+/*==============================================================
+	PRODUCTS CONTAINER, CARDS AND CARDS NAVIGATION
+===============================================================*/
+.produtos-title{
+	text-align: center;
+	font-size: 3em;
+	padding: 5px;
+	width: 100%;
+	color: white;
+	background-color: #4f83cc;
+	font-family: 'Fredericka the Great', cursive;
+}
+.prod-container{
+	background-image: url('../../assets/img/outros/allprodback.jpg');
+	background-repeat: repeat-y;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:center;
+	width: 100%;
+}
+.card{
+	border-radius: 15px;
+	width: 410px;
+	height:450px;
+	margin: 50px;
+	background: lightgrey;
+}
+.card img{
+	border-radius: 15px 15px 0px 0px;
+	width: 100%;
+	height: 58%;
+}
+.card-name{
+	margin-left:10px;
+	font-family: sans-serif;
+}
+.card-price{
+	font-size: 1.5em;
+	padding: 5px;
+	margin-left:10px;
+}
+.card-action{
+	display: flex;
+	align-self: flex-end;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 3px;
+	margin-left: 25%;
+	width: 200px;
+	margin-bottom: 10px;
+}
+.card-action .add,.card-more{
+	color: black;
+	font-size: 2em;
+	cursor: pointer;
+	padding: 5px;
+	width: 60px;
+	border-radius: 10px;
+	text-align: center;
+}
+.card-action .add{
+	background: #01579b; 
+	color: white;
+}
+.card-action .add:hover{
+	background: #4f83cc;
+}
+
+.card-more{
+	transition: .1s;
+}
+.card-more.rotate{
+	transform: rotate(180deg);
+}
+.card .info{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background: white;
+	border: 1px solid lightgrey;
+	box-shadow:9px 9px 10px -5px;
+	padding: 20px;
+	width: 350px;
+	font-size: 1.2em;
+	font-family: Arial;
+}
+.card .info.visible{
+	display: block;
+}
+.paginacao{
+	position: relative;
+	bottom: 30px;
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.paginacao .item{
+	border-radius: 5px;
+	font-size: 1em;
+	margin:5px;
+	padding: 5px;
+	text-decoration: none;
+	border: 1px solid;
+
+}
+.paginacao a{
+	text-decoration: none;
+	background: #01579b;
+	color: white;
+}
+.paginacao .active{
+	background: #d81b60;
+	color: white;
+}
+
+/*==============================================================
+	SHOPPING CART
+===============================================================*/
+
+.carrinho{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+}
+.carrinho .item{
+	background: lightblue;
+	border-radius: 10px;
+	width:300px;
+	display: flex;
+	margin:10px;
+	padding: 10px;
+	flex-direction: column;
+	font-size: 1.2em;
+}
+.carrinho .item img{
+	height: 200px;
+	width: 200px;
+}
+.carrinho .excluir-item{
+	position: relative;
+	left: 84%;
+	top: 0px;
+	widows: 300px;
+}
+.carrinho .excluir-item a{
+	width:100%;
+}
+
+
+
+/*==============================================================
+	FORMS
+===============================================================*/
+
+.form{
+	font-size: 1.5em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height:100%;
+	padding: 20px;
+	margin-top: 20px;
+	font-family: 'Arial';
+}
+.form-campo{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width:420px;
+	margin-bottom:10px;
+}
+.form-campo .form-img{
+	border-radius: 10px;
+	max-height: 250px;
+	align-self: center;
+}
+.form-campo input{
+	width: 400px;
+	padding: 10px;
+	border-radius: 20px;
+	border:none;
+	background: lightgrey;
+	color: black;
+	outline: none;
+	font-weight: bold;
+	font-size: 0.7em;
+}
+.form-action input, .form-action a{
+	padding: 10px;
+	text-decoration: none;
+	border-radius: 20px;
+	border:none;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 0.6em;
+}
+.action{
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 1.2em;
+	text-decoration: none;
+}
+.primary{
+	background-color: #002f6c;
+	color: white;
+	transition: .3s;
+}
+.primary:hover{
+	background: #4f83cc;
+	color:black;
+}
+.red{
+	background:darkred;
+}
+.red:hover{
+	color: black;
+}
+.secondary{
+	color: black;
+}
+.secondary:hover{
+	color: red;
+}
+.form-action .button{
+	background: lightgrey;
+}
+
+/*==============================================================
+	ADMIND PAGE MENU
+===============================================================*/
+
+.menu-adm{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 150px;
+	width: 100%;
+	height: 200px;
+}
+.menu-adm a{
+	font-size: 1.2em;
+	border-radius: 10px;
+	padding: 30px;
+	width: 500px;
+	margin-top: 50px;
+	text-align: center;
+	font-weight: bolder;
+	text-decoration: none;
+	border:1.5px solid;
+}
+
+/*==============================================================
+	TABLES
+===============================================================*/
+table{
+	box-shadow: 5px 5px 15px 0px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	max-height: 580px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	background: #4f83cc;
+
+
+}
+table thead{
+	position: relative;
+	color: white;
+	z-index: 9;
+	width: 100%;
+	display: block;
+	align-items: center;
+	box-shadow: 2px 2px 10px -4px;
+}
+table thead tr{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+
+}
+table thead tr th{
+	margin-left: 10px;
+	justify-content: space-around;
+	padding: 20px;
+	border-radius: 8px;
+
+}
+table tbody{
+	width: 100%;
+	display: block;
+	overflow: scroll;
+	background: white;
+
+	text-align: center;
+}
+table tbody tr{
+	height: 100px;
+}
+table tbody tr td{
+	padding: 20px;
+	font-size: 1.1em;
+	width: 15%;
+}
+table tbody tr:hover{
+	color:red
+}
+table tbody tr .action{
+	font-size: 1em;
+}
+
+/*==============================================================
+	FOOTER
+===============================================================*/
+footer{
+	position:fixed;
+	font-family: 'Sofia', cursive;
+
+	padding:20px; 
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	margin-top: 200px;
+	bottom: 0px;
+	height: 20px;
+	width: 100%;
+	color: white;
+	background: #002f6c;
+}
+.social a{
+	text-decoration: none;
+	color: white;
+	width: 30px;
+	height: 30px;
+}
+
+/*==============================================================
+	ALERT MESSAGES
+===============================================================*/
+.alert{
+	text-align: center;
+	position: fixed;
+	top: 100px;
+	left:40%;
+	max-width:400px;
+	min-width: 400px;
+	padding:50px;
+	background:  #4f83cc;
+	border-radius: 10px;
+	box-shadow: 10px 10px 15px -5px;
+	z-index: 999;
+}
+.alert h1{
+	color: white;
+}
+
+/*==============================================================
+	webkit scrollbar
+===============================================================*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#4f83cc; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #01579b; 
+}
+
+/*==============================================================
+	INFO CONTAINERS
+===============================================================*/
+.infocont{
+	height: 400px;
+
+}
+.about{
+	background:#4f83cc;
+	
+	
+}
+.about div{
+	display: flex;
+	width:900px;
+
+	background-attachment: fixed;
+	padding-top: 20px;
+	padding-left: 100px;
+	height: 300px;
+
+}
+.about .mypic{
+	background-color: white;
+	border-radius: 50%;
+	padding: 20px;
+	width: 250px;
+	height: 200px;
+	display: flex;
+}
+.about .mypic img{
+	align-self: center;
+	width: 100%;
+}
+.about .about-text{
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+	font-size: 1.7em;
+	font-weight: bold;
+	color: white;
+	font-family: Sans Serif;
+	text-align: justify;
+
+}
+.about .about-text span{
+	font-size: 1.6em;
+	font-weight: bolder;
+}
+.categorias{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background:#fbc02d;
+}
